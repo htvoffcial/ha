@@ -31,7 +31,9 @@ fastify.get("/", function(request, reply) {
   // request.query.paramName <-- a querystring example
   reply.view("/src/pages/index.hbs", params);
 });
-
+fastify.get("/src/pages/anpi.html", function(request, reply) {
+  reply.view("/src/pages/anpi.html");
+});
 // A POST route to handle form submissions
 
 

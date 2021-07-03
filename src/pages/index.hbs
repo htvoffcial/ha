@@ -14,9 +14,10 @@
     
     <!-- this is the start of content -->
     <center>
-      <div id="display">
+      
     
     <box>
+      <div id="display">
     <h1>
       登録が必要です
     </h1>
@@ -31,13 +32,18 @@
       <small>
   ※個人情報保護のため、「あらかじめ決めていた暗号」などをご登録ください
     </small>
-    </box>
       </div>
+        </box>
+      
     </center>
     <script>
       function auth(){
     localStorage.setItem('user', document.getElementById("ids").value);
-        document.getElementById("ids").innerHTML="<h1>あん</h1><input type='button'>";
+        document.getElementById("display").innerHTML="<h1>ご利用を開始します</h1><p>ようこそ<b>"+document.getElementById("ids").value+"</b>様。</p><input type='button' onclck='authok()' value='安否の確認・登録'><script>function authok(){document.write("まもなく安否の確認・登録ページへ、移動します");location.href="anpi.html"};</script>";
+      }
+      function authok(){
+    document.write("まもなく安否の確認・登録ページへ、移動します");
+        location.href="anpi.html";
       }
     </script>
   </body>
