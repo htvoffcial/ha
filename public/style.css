@@ -17,12 +17,15 @@ body {
   line-height: 1.5;
    background-image: url('https://cdn.glitch.com/f9f46465-9ea0-4ef6-b6f0-37330f541c8b%2Faurora-1197753_1920-768x512%20(1).jpg?v=1625311750421');
    background-size: cover;
+   position: relative;
 }
 box{
   background-color:#fff;
   display:inline-block;
   border:solid 1px;
   border-radius:10px;
+  padding:20px;
+  
 }
 
 input{
