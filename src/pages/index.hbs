@@ -14,6 +14,8 @@
     
     <!-- this is the start of content -->
     <center>
+      <div id="display">
+    
     <box>
     <h1>
       登録が必要です
@@ -22,14 +24,21 @@
     <p>
       安否の確認・登録には、利用者情報を入力してください
     </p>
-      <form action="">
-  <input placeholder="ここに情報を入力"><br><input type="submit" value="登録" ><br>
-      </form>
+      
+  <input placeholder="ここに情報を入力" id="ids"><br><input type="button" onclick="auth()" value="登録" ><br>
+      
         <hr>
       <small>
   ※個人情報保護のため、「あらかじめ決めていた暗号」などをご登録ください
     </small>
     </box>
+      </div>
     </center>
+    <script>
+      function auth(){
+    localStorage.setItem('user', document.getElementById("ids").value);
+        document.getElementById("ids").innerHTML="<h1>あん</h1><input type='button'>";
+      }
+    </script>
   </body>
 </html>
