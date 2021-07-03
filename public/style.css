@@ -15,11 +15,15 @@ body {
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
+  
 }
-
+box{
+  display:inline-block;
+  border:solid 1px;
+  border-radius:10px;
+}
+input{
+  padding:15;
+  border-radius:10px;
+}
 /* images and videos max out at full width */
-img,
-video {
-  height: auto;
-  max-width: 100%;
-}
