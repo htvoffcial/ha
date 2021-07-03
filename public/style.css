@@ -15,15 +15,24 @@ body {
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
-  
+   background-image: url('https://cdn.glitch.com/f9f46465-9ea0-4ef6-b6f0-37330f541c8b%2Faurora-1197753_1920-768x512%20(1).jpg?v=1625311750421');
+   background-size: cover;
 }
 box{
+  background-color:#fff;
   display:inline-block;
   border:solid 1px;
   border-radius:10px;
 }
+
 input{
-  padding:15;
+outline: none;
+  padding:1rem;
   border-radius:10px;
+  border:solid 1px gray;
+}
+input:focus {
+  border:solid 5px lightblue;
+  
 }
 /* images and videos max out at full width */
