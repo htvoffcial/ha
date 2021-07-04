@@ -39,14 +39,6 @@ fastify.get("/src/pages/anpi.html", function(request, reply) {
 fastify.get("/src/pages/touroku.html",function(request,replay){
   replay.view("/src/pages/touroku.html");
 });
-fastify.get("/src/pages/touroku.hbs",function(request,replay){
-  
-  var dates = {
-    query: "Hello Node!"
-  };
-  replay.view("/src/pages/touroku.hbs",dates);
-  
-  });
 
 
 // Run the server and report out to the logs
