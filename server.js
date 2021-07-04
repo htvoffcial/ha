@@ -83,3 +83,6 @@ fs.appendFile("save.txt", data, (err) => {
 fastify.get("/src/pages/tool/gazoname.html", function(request, reply) {
   reply.view("/src/pages/tool/gazoname.html");
 });
+fastify.get("/src/pages/tool/onsei.html", function(request, reply) {
+  reply.view("/src/pages/tool/onsei.html");
+});
