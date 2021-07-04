@@ -38,6 +38,10 @@ fastify.get("/src/pages/anpi.html", function(request, reply) {
 fastify.get("/src/pages/touroku.html",function(request,replay){
   replay.view("/src/pages/touroku.html");
 });
+fastify.get("/src/apis/",function(request,rreplay){
+  
+  });
+
 
 // Run the server and report out to the logs
 fastify.listen(process.env.PORT, function(err, address) {
