@@ -55,7 +55,7 @@ fastify.listen(process.env.PORT, function(err, address) {
 });
 var fs = require('fs');
 fastify.get('/add', (req) => {
-  const data = "登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti;
+  const data = "<box>登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti+"";
 
 fs.appendFile("save.txt", data, (err) => {
   if (err) throw err;

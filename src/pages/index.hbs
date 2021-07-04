@@ -23,8 +23,10 @@
     </h1>
       
 
-      
-  <input placeholder="ここに情報を入力" id="ids" pattern="^[0-9A-Za-z]+$"><br><input type="button" onclick="auth()" value="登録" ><br>
+      <p>
+        半角英数で入力してください
+        </p>
+  <input placeholder="ここに情報を入力" id="ids" pattern="^[0-9A-Za-z]+$" onInput="textCheck(this)"><br><input type="button" onclick="auth()" value="登録" ><br>
       
         <hr>
       <small>
@@ -47,21 +49,14 @@
       {
         let str=$this.value;
         // 文頭から文末まで全て0-9かチェック
-        if(!str.match(/^［0-9］+$/)){
+        if(!str.match(/^[0-9A-Za-z]+$/)){
           // そうでなければ入力文字を空白に変換
           str="";
         }
         $this.value=str;
       }
       
-      function buttonClick(){
-        // 入力値取得
-        let input = document.getElementById("text").value;
-        let output = input;
-        // 表示
-        document.getElementById("html").innerHTML
-          = output;
-      }
+      
     </script>
   </body>
 </html>
