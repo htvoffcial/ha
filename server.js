@@ -55,10 +55,11 @@ const displayFile = async (file) => {
     let num = i.toString().padStart(5, "0");  //5文字未満は"0"で埋める
     i++;
 
-    console.log(`${num}: ${line}`);
+  
   }
 };
-  var date=displayFile("save.txt");
+  var date="{date:"+displayFile("save.txt")+"}";
+
   console.log("/src/pages/kakunin.hbs",date);
   
 
