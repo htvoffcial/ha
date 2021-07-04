@@ -1,0 +1,75 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://cdn.glitch.com/f9f46465-9ea0-4ef6-b6f0-37330f541c8b%2Faurora-1197753_1920-768x512%20(1).jpg?v=1625311750421" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>画像共有</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />   
+  </head>
+  <body>
+    
+    <!-- this is the start of content -->
+    <center>
+      
+    
+    <box>
+      <div id="display">
+    <h1>
+    画像共有web
+    </h1>
+        <p>
+        画像をリンクにする
+        </p>
+        <form action="/add" method="get">
+        <select name="jti">
+
+<option>ここで選択↓</option>
+
+<option value="無事です">無事です</option>
+
+<option value="被害あり">被災しました</option>
+          <option value="安全な場所で避難しています">安全な場所で避難しています</option>
+          
+
+</select>
+        <br>
+          <p>
+            あなたの情報※自動入力されます
+          </p>
+        <input type="text" name="name" id="names" readonly>
+          <p>
+            現在日時※自動入力されます
+          </p>
+        <input type="text" name="time" id="time" readonly>
+          <br>
+      <input type="submit" value="安否を登録" style="background-color:red;" onclick="location.href='/src/pages/touroku.html'"><br>
+          
+        </form>
+      </div>
+        </box>
+      
+    </center>
+    <script>
+      
+     var ABC = localStorage.getItem( "user" );
+if ( ABC ){
+  
+} else {
+    alert("plese login");
+  location.href="/";
+}
+      document.getElementById("names").value=ABC;
+   const date1 = new Date();
+      document.getElementById("time").value=date1.toLocaleString();
+    FileReader();
+		fr.onload=function(evt) {
+			document.getElementById("base64area").innerHTML=evt.target.result;
+			document.getElementById("datauri").href=evt.target.result;
+		}
+		fr.rea
+    </script>
+  </body>
+</html>
