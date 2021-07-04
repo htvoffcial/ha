@@ -22,14 +22,17 @@
       安否情報一覧
     </h1>
       
-    
+    <div id="disp">
       
-  {{date}};
+        </div>
+      
+  
       </div>
         </box>
       
     </center>
     <script>
+      document.getElementById("disp").innerHTML="{{dates}}";
       function auth(){
     localStorage.setItem('user', document.getElementById("ids").value);
         document.getElementById("display").innerHTML="<h1>ご利用を開始します</h1><p>ようこそ<b>"+document.getElementById("ids").value+"</b>様。</p><a href='/src/pages/anpi.html'>安否の確認・登録</a>";

@@ -45,7 +45,10 @@ fastify.get("/src/pages/kakunin.hbs",function(request,replay){
 fs.readFile("save.txt", "utf-8", (err, data) => {
   if (err) throw err;
   
-   var dates="{ date: '"+data+"' }";
+
+   var dates={
+   dates: data
+  };
   replay.view("/src/pages/kakunin.hbs",dates);
   console.log(dates);
 });
