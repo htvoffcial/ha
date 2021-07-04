@@ -1,5 +1,6 @@
 const path = require("path");
-
+const express = require('express');
+const app = express();
 // Require the fastify framework and instantiate it
 const fastify = require("fastify")({
   // set this to true for detailed logging:
@@ -58,9 +59,8 @@ fastify.listen(process.env.PORT, function(err, address) {
   fastify.log.info(`server listening on ${address}`);
 });
 var fs = require('fs');
-fastify.post('/add', function(req, res) {
-    req.on('data', function(chunk) {
+fastify.post('/add', function(request, response) {
+    request.on('data', function(chunk) {
       fs.writeFile('save.txt', chunk);
-      
     });
 });
