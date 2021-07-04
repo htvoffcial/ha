@@ -41,15 +41,29 @@ fastify.get("/src/pages/touroku.html",function(request,replay){
   replay.view("/src/pages/touroku.html");
 });
 fastify.get("/src/pages/kakunin.hbs",function(request,replay){
-var readline = require("readline");
- var stream = fs.createReadStream("save.txt", "utf8");
- var reader = readline.createInterface({ input: stream });
-reader.on("line", (data) => {
-  replay.view("/src/pages/kakunin.hbs",data);
-});
-  
-});
+const readline = require("readline");
 
+const displayFile = async (file) => {
+  const stream = fs.createReadStream(file);
+  const rl = readline.createInterface({
+    input: stream
+  });
+
+  let i = 1;
+  for await (const line of rl) {
+    // 行番号を作成
+    let num = i.toString().padStart(5, "0");  //5文字未満は"0"で埋める
+    i++;
+
+    console.log(`${num}: ${line}`);
+  }
+};
+  var date=displayFile("save.txt");
+  console.log("/src/pages/kakunin.hbs",date);
+  
+
+
+});
 
 // Run the server and report out to the logs
 fastify.listen(process.env.PORT, function(err, address) {
