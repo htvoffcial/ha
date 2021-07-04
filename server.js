@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require('express');
+var fs = require('fs');
 const app = express();
 // Require the fastify framework and instantiate it
 const fastify = require("fastify")({
@@ -39,8 +40,14 @@ fastify.get("/src/pages/anpi.html", function(request, reply) {
 fastify.get("/src/pages/touroku.html",function(request,replay){
   replay.view("/src/pages/touroku.html");
 });
-fastify.get("/src/pages/kakunin.html",function(request,replay){
-  replay.view("/src/pages/kakunin.html");
+fastify.get("/src/pages/kakunin.hbs",function(request,replay){
+var readline = require("readline");
+ var stream = fs.createReadStream("save.txt", "utf8");
+ var reader = readline.createInterface({ input: stream });
+reader.on("line", (data) => {
+  replay.view("/src/pages/kakunin.hbs",data);
+});
+  
 });
 
 
@@ -53,9 +60,9 @@ fastify.listen(process.env.PORT, function(err, address) {
   console.log(`Your app is listening on ${address}`);
   fastify.log.info(`server listening on ${address}`);
 });
-var fs = require('fs');
+
 fastify.get('/add', (req) => {
-  const data = "<box>登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti+"";
+  const data = "<box>登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti+"</box><br>";
 
 fs.appendFile("save.txt", data, (err) => {
   if (err) throw err;
