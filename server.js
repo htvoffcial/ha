@@ -30,6 +30,7 @@ fastify.get("/", function(request, reply) {
   let params = {
     greeting: "Hello Node!"
   };
+  console.log(params);
   // request.query.paramName <-- a querystring example
   reply.view("/src/pages/index.hbs", params);
 });
@@ -41,26 +42,16 @@ fastify.get("/src/pages/touroku.html",function(request,replay){
   replay.view("/src/pages/touroku.html");
 });
 fastify.get("/src/pages/kakunin.hbs",function(request,replay){
-const readline = require("readline");
-
-const displayFile = async (file) => {
-  const stream = fs.createReadStream(file);
-  const rl = readline.createInterface({
-    input: stream
-  });
-
-  let i = 1;
-  for await (const line of rl) {
-    // 行番号を作成
-    let num = i.toString().padStart(5, "0");  //5文字未満は"0"で埋める
-    i++;
+fs.readFile("save.txt", "utf-8", (err, data) => {
+  if (err) throw err;
+  
+   var dates="{ date: '"+data+"' }";
+  replay.view("/src/pages/kakunin.hbs",dates);
+  console.log(dates);
+});
+ 
 
   
-  }
-};
-  var date="{date:"+displayFile("save.txt")+"}";
-
-  console.log("/src/pages/kakunin.hbs",date);
   
 
 
