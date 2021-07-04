@@ -52,5 +52,6 @@ fastify.listen(process.env.PORT, function(err, address) {
 });
 var fs = require('fs');
 fastify.get('/add', (req) => {
-console.log('GETパラメータ取得: ' + req.query.name);
+console.log('名前:' + req.query.name+" 状態:"+req.query.jti);
+  return 0;
 });
