@@ -57,3 +57,10 @@ fastify.listen(process.env.PORT, function(err, address) {
   console.log(`Your app is listening on ${address}`);
   fastify.log.info(`server listening on ${address}`);
 });
+var fs = require('fs');
+fastify.post('/add', function(req, res) {
+    req.on('data', function(chunk) {
+      fs.writeFile('save.txt', chunk);
+      
+    });
+});
