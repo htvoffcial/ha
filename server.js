@@ -36,7 +36,7 @@ fastify.get("/src/pages/anpi.html", function(request, reply) {
 });
 // A POST route to handle form submissions
 fastify.get("/src/pages/touroku.html",function(request,replay){
-  replay.view("///");
+  replay.view("/src/pages/touroku.html");
 });
 
 // Run the server and report out to the logs

@@ -20,8 +20,21 @@
     <h1>
     安否web
     </h1>
+        <p>
+        安全な場所で状態を選択
+        </p>
+        <select name="example2">
+
+<option value="サンプル1_">ここで選択</option>
+
+<option value="サンプル2_">無事です</option>
+
+<option value="サンプル3_">助けください</option>
+
+</select>
+        <br>
       <input type="button" value="安否を登録" style="background-color:red;" onclick="location.href='/src/pages/touroku.html'"><br>
-    <input type="button" value="安否を確認">
+    
       </div>
         </box>
       
@@ -35,6 +48,23 @@ if ( ABC ){
     alert("plese login");
   location.href="/";
 }
+      
+      
+      const fs = require("fs");
+
+// 書き込むデータ準備
+
+const data = "Hello Node";
+
+// 書き込み
+
+fs.writeFile("file1.txt", data, (err) => {
+
+  if (err) throw err;
+
+  alert('正常に書き込みが完了しました');
+
+});
     </script>
   </body>
 </html>
