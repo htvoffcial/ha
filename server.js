@@ -39,6 +39,9 @@ fastify.get("/src/pages/anpi.html", function(request, reply) {
 fastify.get("/src/pages/touroku.html",function(request,replay){
   replay.view("/src/pages/touroku.html");
 });
+fastify.get("/src/pages/kakunin.html",function(request,replay){
+  replay.view("/src/pages/kakunin.html");
+});
 
 
 // Run the server and report out to the logs
@@ -52,6 +55,12 @@ fastify.listen(process.env.PORT, function(err, address) {
 });
 var fs = require('fs');
 fastify.get('/add', (req) => {
-console.log('名前:' + req.query.name+" 状態:"+req.query.jti);
+  const data = "登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti;
+
+fs.appendFile("save.txt", data, (err) => {
+  if (err) throw err;
+  console.log("正常に書き込みが完了しました");
+});
+//console.log('名前:' + req.query.name+" 状態:"+req.query.jti);
   return 0;
 });
