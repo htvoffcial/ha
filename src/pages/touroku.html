@@ -37,7 +37,12 @@
           <p>
             あなたの情報※自動入力されます
           </p>
-        <input type="text" name="name" id="names"><br>
+        <input type="text" name="name" id="names" readonly>
+          <p>
+            現在日時※自動入力されます
+          </p>
+        <input type="text" name="time" id="time" readonly>
+          <br>
       <input type="submit" value="安否を登録" style="background-color:red;" onclick="location.href='/src/pages/touroku.html'"><br>
           
         </form>
@@ -55,7 +60,8 @@ if ( ABC ){
   location.href="/";
 }
       document.getElementById("names").value=ABC;
-      
+   const date1 = new Date();
+      document.getElementById("time").value=date1.toLocaleString();
       
      
     </script>
