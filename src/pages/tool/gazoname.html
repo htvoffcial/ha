@@ -23,20 +23,26 @@
         <p>
         画像をリンクにする
         </p>
-        <form action="/add" method="get">
-        <select name="jti">
-
-<option>ここで選択↓</option>
-
-<option value="無事です">無事です</option>
-
-<option value="被害あり">被災しました</option>
-          <option value="安全な場所で避難しています">安全な場所で避難しています</option>
-          
-
-</select>
-        <br>
-          <p>
+        <form>
+	<input type="file" onchange="fileget(this);">
+ <br>
+	<textarea id="base64area"></textarea>
+</form>
+<script>
+	function fileget(imgfile) {
+		if(!imgfile.files.length) return;
+		var file=imgfile.files[0];
+		var fr=new FileReader();
+		fr.onload=function(evt) {
+			document.getElementById("base64area").innerHTML=evt.target.result;
+			document.getElementById("datauri").href=evt.target.result;
+		}
+		fr.readAsDataURL(file);
+	}
+  
+</script>
+<hr>
+<p>
             あなたの情報※自動入力されます
           </p>
         <input type="text" name="name" id="names" readonly>
@@ -46,8 +52,9 @@
         <input type="text" name="time" id="time" readonly>
           <br>
       <input type="submit" value="安否を登録" style="background-color:red;" onclick="location.href='/src/pages/touroku.html'"><br>
-          
+      
         </form>
+    
       </div>
         </box>
       
@@ -64,12 +71,7 @@ if ( ABC ){
       document.getElementById("names").value=ABC;
    const date1 = new Date();
       document.getElementById("time").value=date1.toLocaleString();
-    FileReader();
-		fr.onload=function(evt) {
-			document.getElementById("base64area").innerHTML=evt.target.result;
-			document.getElementById("datauri").href=evt.target.result;
-		}
-		fr.rea
+    
     </script>
   </body>
 </html>

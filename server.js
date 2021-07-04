@@ -80,3 +80,6 @@ fs.appendFile("save.txt", data, (err) => {
 //console.log('名前:' + req.query.name+" 状態:"+req.query.jti);
   return 0;
 });
+fastify.get("/src/pages/tool/gazoname.html", function(request, reply) {
+  reply.view("/src/pages/tool/gazoname.html");
+});
