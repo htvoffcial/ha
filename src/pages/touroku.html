@@ -23,7 +23,7 @@
         <p>
         安全な場所で状態を選択
         </p>
-        <form action="/add" method="post">
+        <form action="/add" method="get">
         <select name="状況">
 
 <option>ここで選択</option>
@@ -37,7 +37,7 @@
           <p>
             あなたの情報※自動入力されます
           </p>
-        <input type="text" name="お名前" readonly id="names" disabled><br>
+        <input type="text" name="name" id="names"><br>
       <input type="submit" value="安否を登録" style="background-color:red;" onclick="location.href='/src/pages/touroku.html'"><br>
           
         </form>

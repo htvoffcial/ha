@@ -51,6 +51,6 @@ fastify.listen(process.env.PORT, function(err, address) {
   fastify.log.info(`server listening on ${address}`);
 });
 var fs = require('fs');
-fastify.post('/add', function(req, res) {
+fastify.get('/add', function(req, res) {
       console.log(res,req);
 });
