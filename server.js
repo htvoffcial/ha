@@ -30,7 +30,7 @@ fastify.get("/", function(request, reply) {
   let params = {
     greeting: "Hello Node!"
   };
-  console.log(params);
+ 
   // request.query.paramName <-- a querystring example
   reply.view("/src/pages/index.hbs", params);
 });
@@ -71,7 +71,7 @@ fastify.listen(process.env.PORT, function(err, address) {
 });
 
 fastify.get('/add', (req) => {
-  const data = "<box>登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti+"</box><br>";
+  const data = "登録日時:"+req.query.time+' 名前:' + req.query.name+" 状態:"+req.query.jti+"\n|||";
 
 fs.appendFile("save.txt", data, (err) => {
   if (err) throw err;
